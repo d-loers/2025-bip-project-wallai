@@ -1,0 +1,24 @@
+@startuml drivetrain
+class MotorController
+class ParallaxFeedback360
+class SlamtecRPLIDARA1M8
+class Navigator
+class SPI
+class UART
+class Robot
+
+Interface IServoMotor
+Interface ILiDaR
+
+MotorController --* IServoMotor : 4..4
+
+ParallaxFeedback360 .u.> IServoMotor
+SlamtecRPLIDARA1M8 .u.> ILiDaR
+
+Navigator --* MotorController
+Navigator --* ILiDaR
+
+Robot --> Navigator
+Robot --> SPI
+Robot --> UART
+@enduml
