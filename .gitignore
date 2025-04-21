@@ -127,5 +127,6 @@ Backup of *.doc*
 # miscellaneous
 .mp4
 .zip
+.env
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,platformio,c++,c,microsoftoffice
