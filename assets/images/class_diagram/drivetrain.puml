@@ -1,24 +1,49 @@
 @startuml drivetrain
-class MotorController
-class ParallaxFeedback360
-class SlamtecRPLIDARA1M8
+
+class Drivetrain
 class Navigator
-class SPI
+class ServoController
+class ParallexFeedback360
+class AdafruitNXP9DOF
+class SlamtecA1RPLiDaR
+
 class UART
-class Robot
+class SPI
+class I2C
 
-Interface IServoMotor
-Interface ILiDaR
+interface INetworkManager
+interface INavigator
+interface IMotorController
+interface IServo
+interface IMagnometer
+interface IAccerelometer
+interface IGyroscope
+interface ILiDaR
 
-MotorController --* IServoMotor : 4..4
+Navigator .u.|> INavigator
+ServoController .u.|> IMotorController
+ParallexFeedback360 .u.|> IServo
+AdafruitNXP9DOF .u.|> IMagnometer
+AdafruitNXP9DOF .u.|> IAccerelometer
+AdafruitNXP9DOF .u.|> IGyroscope
+SlamtecA1RPLiDaR .u.|> ILiDaR
+NetworkManager .u.|> INetworkManager
 
-ParallaxFeedback360 .u.> IServoMotor
-SlamtecRPLIDARA1M8 .u.> ILiDaR
+Drivetrain --* INavigator
+Drivetrain --* INetworkManager
 
-Navigator --* MotorController
+Navigator --* IMotorController
+Navigator --* IMagnometer
+Navigator --* IAccerelometer
+Navigator --* IGyroscope
 Navigator --* ILiDaR
 
-Robot --> Navigator
-Robot --> SPI
-Robot --> UART
+ServoController --* IServo
+
+AdafruitNXP9DOF --> I2C
+
+SlamtecA1RPLiDaR --> UART
+
+NetworkManager --> SPI
+
 @enduml
