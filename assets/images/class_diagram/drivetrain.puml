@@ -39,6 +39,7 @@ Navigator --* IGyroscope
 Navigator --* ILiDaR
 
 ServoController --* IServo
+ServoController --* IGyroscope
 
 AdafruitNXP9DOF --> I2C
 
