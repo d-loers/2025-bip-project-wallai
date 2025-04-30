@@ -2,9 +2,11 @@
 
 #include "IServo.hpp"
 
+#include <stdint.h>
+
 class ParallexFeedback360 : public IServo { 
 public:
-    ParallexFeedback360(const int feedback_pin, const int control_pin);
+    ParallexFeedback360(const uint8_t feedback_pin, const uint8_t control_pin);
     ~ParallexFeedback360();
     bool MoveClockwise(int speed);
     bool MoveClockwise(int angle);
