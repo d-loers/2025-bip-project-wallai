@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ### C ###
 # Prerequisites
 *.d
@@ -258,24 +257,8 @@ Backup of *.doc*
 .zip
 .env
 
-### CMake ###
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
-
-### CMake Patch ###
-CMakeUserPresets.json
-
 # External projects
 *-prefix/
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,platformio,c++,c,microsoftoffice
->>>>>>> 0043621452334d63c5ec154824c5660d97b123d8
+# Excludes files in build folder
+build/*
