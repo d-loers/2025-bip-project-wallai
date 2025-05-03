@@ -1,44 +1,27 @@
 #include "ParallexFeedback360.hpp"
 
-ParallexFeedback360::ParallexFeedback360(const uint8_t feedback_pin, const uint8_t control_pin) :
-    feedback_pin(feedback_pin), control_pin(control_pin) {}
+ParallexFeedback360::ParallexFeedback360(const uint8_t control_pin) :
+    control_pin(control_pin) {
+    if (wiringPiSetupPinType(WPIPinType::WPI_PIN_PHYS) == WIRINGPI_INVALID_PARAMETER_ERROR) {return;}
+    pwmSetRange(1024);
+    pwmSetClock(32);
+    pwmWrite(this->control_pin, 512);
+    pinMode(this->control_pin, PWM_MS_OUTPUT); 
+}
 
 ParallexFeedback360::~ParallexFeedback360() {
-
+    pwmWrite(this->control_pin, 0);
+    pinMode(this->control_pin, PM_OFF);
 }
 
 bool ParallexFeedback360::MoveClockwise(int speed) {
-
-}
-
-bool ParallexFeedback360::MoveClockwise(int angle) {
-
-}
+    return false;
+} 
 
 bool ParallexFeedback360::MoveCounterClockwise(int speed) {
-
-}
-
-bool ParallexFeedback360::MoveCounterClockwise(int angle) {
-
+    return false;
 }
 
 void ParallexFeedback360::Stop(void) {
-
-}
-
-bool ParallexFeedback360::GetAngle(void) {
-
-}
-
-bool ParallexFeedback360::SetAngle(int angle) {
-
-}
-
-bool ParallexFeedback360::IsMoving(void) {
-
-}
-
-bool ParallexFeedback360::IsAtPosition(int angle) {
-
+    return;
 }
