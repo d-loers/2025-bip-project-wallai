@@ -1,6 +1,3 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,platformio,c++,c,microsoftoffice
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,platformio,c++,c,microsoftoffice
-
 ### C ###
 # Prerequisites
 *.d
@@ -147,5 +144,3 @@ CMakeUserPresets.json
 
 # External projects
 *-prefix/
-
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,platformio,c++,c,microsoftoffice
