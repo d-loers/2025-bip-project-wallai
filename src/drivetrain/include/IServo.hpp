@@ -1,9 +1,11 @@
 #pragma once
 
+#include <stdint.h>
+
 class IServo {
 public:
     virtual ~IServo() = default;
-    virtual bool MoveClockwise(int speed) = 0;
-    virtual bool MoveCounterClockwise(int speed) = 0;
+    virtual bool MoveClockwise(uint8_t speed) = 0;
+    virtual bool MoveCounterClockwise(uint8_t speed) = 0;
     virtual void Stop(void) = 0;
 };
