@@ -3,8 +3,8 @@
 ParallexFeedback360::ParallexFeedback360(const uint8_t control_pin) :
     control_pin(control_pin) {
     if (wiringPiSetupPinType(WPIPinType::WPI_PIN_PHYS) == WIRINGPI_INVALID_PARAMETER_ERROR) {return;}
-    pwmSetRange(200);
-    pwmSetClock(1920);
+    pwmSetRange(2000);
+    pwmSetClock(192);
     pwmWrite(this->control_pin, 100);
     pinMode(this->control_pin, PWM_MS_OUTPUT); 
 }
