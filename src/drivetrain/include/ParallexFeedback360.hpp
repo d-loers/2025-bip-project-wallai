@@ -20,8 +20,8 @@ private:
     const int control_pin;
     const int min_value_threshold = 0;
     const int max_value_threshold = 200;
-    const int min_clockwise_speed_value = 1280;
-    const int min_counterclockwise_speed_value = 1520;
+    const int min_clockwise_speed_value = 128;
+    const int min_counterclockwise_speed_value = 152;
 
     bool IsValueInRange(uint8_t value);
 };
