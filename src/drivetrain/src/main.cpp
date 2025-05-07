@@ -6,7 +6,8 @@ ParallexFeedback360 *test;
 
 void *test_method(void *arg) {
     test = new ParallexFeedback360(12);
-
+    test->MoveClockwise(100);
+    
     while (1) {
         // For ~10ms sleep
         struct timespec ts = {0, 10 * 1000 * 1000};  // 10 million nanoseconds = 10 ms
