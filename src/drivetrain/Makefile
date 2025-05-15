@@ -4,7 +4,7 @@ PRODUCT = Drivetrain
 CC = g++
 CPPFLAGS = -Iinclude
 CXXFLAGS = -Wall -Werror -Wextra -pedantic -Wno-unused-parameter -O0 $(CPPFLAGS)
-LDFLAGS = -lpthread
+LDFLAGS = -lpthread -li2c
 
 # Directories
 BUILD_DIR = build
